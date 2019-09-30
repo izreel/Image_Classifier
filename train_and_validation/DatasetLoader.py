@@ -28,4 +28,4 @@ def get_dataset(dataset_location, batch_size = 20, validation_size = 0.2):
     test_loader = torch.utils.data.DataLoader(test_data, batch_size= batch_size)
     
 
-    return train_loader, valid_loader, test_loader
+    return train_loader, valid_loader, test_loader3
