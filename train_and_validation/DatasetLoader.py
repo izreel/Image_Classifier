@@ -11,8 +11,8 @@ def get_dataset(dataset_location, batch_size = 20, validation_size = 0.2):
         transforms.ToTensor(), 
         transforms.Normalize((0.5, 0.5, 0.5,), (0.5, 0.5, 0.5))])
     
-    train_data = datasets.CIFAR10(dataset_location, train= True, download= True, transform= dataset_transform)
-    test_data = datasets.CIFAR10(dataset_location, train= True, download= True, transform= dataset_transform)
+    train_data = datasets.CIFAR10(dataset_location, train= True, download= False, transform= dataset_transform)
+    test_data = datasets.CIFAR10(dataset_location, train= True, download= False, transform= dataset_transform)
 
     train_indices = list(range(len(train_data)))
     np.random.shuffle(train_indices)
