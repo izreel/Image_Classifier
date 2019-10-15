@@ -14,7 +14,7 @@ def train(model, training_set, validation_set, optimizer, criterion, epochs= 30)
 
         model.train()
 
-        for j, (data, label) in enumerate(training_set):
+        for data, label in training_set:
             data, label = data.cuda(), label.cuda()
 
             optimizer.zero_grad()
