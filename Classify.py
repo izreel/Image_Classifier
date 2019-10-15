@@ -21,11 +21,11 @@ classes = ['airplane',
 
 model = ObjectNet.ObjectNet()
 
-model.load_state_dict(torch.load("model_weights.pt"))
+# model.load_state_dict(torch.load("model_weights.pt"))
 model.cuda()
 
 print("Setting up training set, validation set and test set using CIFAR10 dataset")
 train_set, validation_set, test_set = train_and_validation.DatasetLoader.get_dataset('data')
 print("Starting to train model")
-# train_and_validation.NetTraining.train(model, train_set, validation_set, optim.SGD(model.parameters(), lr= 0.01), nn.CrossEntropyLoss())
+train_and_validation.NetTraining.train(model, train_set, validation_set, optim.SGD(model.parameters(), lr= 0.01), nn.CrossEntropyLoss(), 60)
 print(train_and_validation.NetAccuracy.accuracy(model, test_set)*100)
