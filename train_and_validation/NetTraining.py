@@ -6,7 +6,7 @@ import numpy as np
 
 #Trains a model under a dataset
 def train(model, training_set, validation_set, optimizer, criterion, epochs= 30):
-    #model.cuda()
+
     valid_loss_min = np.Inf
     for i in range(epochs):
         train_loss = 0
