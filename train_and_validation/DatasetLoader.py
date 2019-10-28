@@ -9,7 +9,7 @@ def get_dataset(dataset_location, batch_size = 20, validation_size = 0.2):
     dataset_transform = transforms.Compose([ transforms.RandomHorizontalFlip(),
         transforms.RandomRotation(10),
         transforms.ToTensor(), 
-        transforms.Normalize((0.5, 0.5, 0.5,), (0.5, 0.5, 0.5))])
+        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
     
     train_data = datasets.CIFAR10(dataset_location, train= True, download= False, transform= dataset_transform)
     test_data = datasets.CIFAR10(dataset_location, train= False, download= False, transform= dataset_transform)

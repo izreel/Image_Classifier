@@ -46,12 +46,12 @@ def train(model, training_set, validation_set, optimizer, criterion, epochs= 30)
 
         if validation_loss <= valid_loss_min:
             print("Saving weights")
-            torch.save(model.state_dict(), "model_weights.pt")
+            torch.save(model.state_dict(), "{}_model_weights_{}_epochs.pt".format(model.__class__.__name__, epochs))
             valid_loss_min = validation_loss
   
     losses[["train", "valid"]].plot()
     plt.xlabel('Epoch')
     plt.ylabel("Losses")
     plt.title('Training and Validation Results through each Epoch')
-    plt.savefig('training_progress_{}_epochs.png'.format(epochs))
+    plt.savefig('{}_training_progress_{}_epochs.png'.format(model.__class__.__name__, epochs))
 
